@@ -20,4 +20,10 @@
     <?php endforeach; ?>
 </ul>
 
+<h2>Sisesta ülesanne</h2>
+<form method="POST" action="/task">
+    <input type="text" name="description">
+    <input type="submit" value="Salvesta">
+</form>
+
 <?php require_once('partials/footer.php'); ?>
