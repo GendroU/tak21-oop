@@ -2,6 +2,12 @@
 
 <h1>My Tasks</h1>
 
+<h3>Sisesta ülesanne</h3>
+<form method="POST" action="/task">
+    <input type="text" name="description">
+    <input type="submit" value="Salvesta">
+</form>
+
 <ul>
     <?php foreach ( $tasks as $task ): ?>
         <li>
@@ -19,11 +25,5 @@
         </li>
     <?php endforeach; ?>
 </ul>
-
-<h2>Sisesta ülesanne</h2>
-<form method="POST" action="/task">
-    <input type="text" name="description">
-    <input type="submit" value="Salvesta">
-</form>
 
 <?php require_once('partials/footer.php'); ?>
