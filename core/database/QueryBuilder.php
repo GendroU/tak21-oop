@@ -1,10 +1,12 @@
 <?php
 
+namespace App\Core\Database;
+
 class QueryBuilder {
 
     protected $pdo;
 
-    public function __construct ( PDO $pdo ) {
+    public function __construct ( \PDO $pdo ) {
 
         $this->pdo = $pdo;
 
@@ -15,7 +17,7 @@ class QueryBuilder {
         $stmt = $this->pdo->prepare("SELECT * FROM {$table};");
         $stmt->execute();
         
-        return $stmt->fetchAll(PDO::FETCH_CLASS);
+        return $stmt->fetchAll(\PDO::FETCH_CLASS);
 
     }
 
@@ -31,7 +33,7 @@ class QueryBuilder {
         try {
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute($parameters);
-        } catch ( Exception $e ) {
+        } catch ( \Exception $e ) {
             die('Ups! Midagi läks valesti!');
         }
 
